@@ -6,6 +6,7 @@ body, html {
 .background {
     position: relative;
     height: 100vh;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -13,27 +14,22 @@ body, html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
-.header {
+.footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    position: relative;
-    z-index: 10;
-    color: white;
+    height: 250px; /* Adjust height as needed */
+    background-color: white;
     text-align: center;
 }
 
 .logo {
     width: 150px;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .company-name {
@@ -43,5 +39,5 @@ body, html {
 
 .tagline {
     font-size: 1.2rem;
-    margin-top: 10px;
+    margin-top: 5px;
 }
