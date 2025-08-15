@@ -5,47 +5,59 @@ body {
   background-color: #f5f5f5; /* neutral for rest of page */
 }
 
-/* Full-width header with background image */
-.blue-header {
+/* Full-width hero header with background image */
+.hero-header {
+  position: relative;        /* allow overlay */
   width: 100%;
-  background-image: url('backgroundhero_2.jpg'); /* new image */
-  background-size: cover;          /* fill entire header */
-  background-position: center;     /* center image */
-  background-repeat: no-repeat;    /* no tiling */
-  display: flex;
-  justify-content: center;         /* horizontal centering */
-  align-items: center;             /* vertical centering within padding */
-  flex-direction: column;
-  padding-top: 30px;               /* space above logo/text */
-  padding-bottom: 10px;            /* space below logo/text */
+  min-height: 50vh;
   text-align: center;
-  min-height: 50vh;                /* optional: half screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 30px;         /* space above logo/text */
+  padding-bottom: 10px;      /* space below logo/text */
+  overflow: hidden;
 }
 
-/* Container for content inside header */
-.blue-header .container img {
+.hero-header .header-bg {
+  position: absolute;        /* full header */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* cover entire header */
+  z-index: 0;                /* behind content */
+}
+
+.hero-header .container {
+  position: relative;
+  z-index: 1;                /* in front of background */
+}
+
+.hero-header .container img {
   width: 120px;
   height: auto;
   margin-bottom: 15px;
 }
 
-.blue-header .container p {
+.hero-header .container p {
   margin: 5px 0;
   font-size: 1.2rem;
 }
 
 /* Main content */
 main {
-  text-align: center;  /* centers text horizontally */
-  padding: 40px 20px;  /* spacing from edges */
+  text-align: center;
+  padding: 40px 20px;
 }
 
 /* Responsive for mobile */
 @media (max-width: 480px) {
-  .blue-header .container img {
+  .hero-header .container img {
     width: 90px;
   }
-  .blue-header .container p {
+  .hero-header .container p {
     font-size: 1rem;
   }
 }
