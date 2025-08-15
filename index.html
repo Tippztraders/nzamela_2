@@ -246,7 +246,7 @@
     
     
     
-   <!-- HAPPY CLIENT COOL -->
+   <!-- HTML HAPPY CLIENT COOL -->
     
   <section class="happy-section">
   <div class="happy-image">
@@ -259,10 +259,11 @@
 </section>
 
 
+
     
     
     <!-- JS HAPPY-->
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   const section = document.querySelector(".happy-section");
   const image = document.querySelector(".happy-image");
@@ -273,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (entry.isIntersecting) {
         image.classList.add("animate");
         text.classList.add("animate");
-        observer.unobserve(section); // Prevent re-trigger
+        observer.unobserve(section);
       }
     });
   }, { threshold: 0.3 });
@@ -281,6 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(section);
 });
 </script>
+
 
 
   <!--end of JS HAPPY-->   
