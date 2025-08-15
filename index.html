@@ -248,8 +248,7 @@
     
    <!-- HAPPY CLIENT COOL -->
     
-   <!-- After your hero section -->
-<section class="happy-section">
+  <section class="happy-section">
   <div class="happy-image">
     <img src="happy.jpg" alt="Happy client">
   </div>
@@ -259,11 +258,13 @@
   </div>
 </section>
 
+
     
     
     <!-- JS HAPPY-->
-  <script>
+ <script>
 document.addEventListener("DOMContentLoaded", () => {
+  const section = document.querySelector(".happy-section");
   const image = document.querySelector(".happy-image");
   const text = document.querySelector(".happy-text");
 
@@ -272,13 +273,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (entry.isIntersecting) {
         image.classList.add("animate");
         text.classList.add("animate");
+        observer.unobserve(section); // Prevent re-trigger
       }
     });
   }, { threshold: 0.3 });
 
-  observer.observe(document.querySelector(".happy-section"));
+  observer.observe(section);
 });
 </script>
+
 
   <!--end of JS HAPPY-->   
     
