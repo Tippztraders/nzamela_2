@@ -9,118 +9,17 @@
 <body>
 
   <header class="hero-header">
-  <!-- Background image -->
-  <img src="backgroundhero_2.png" alt="Header Background" class="header-bg">
+    <img src="backgroundhero_2.png" alt="Header Background" class="header-bg">
+    <div class="container">
+      <img src="logo.png" alt="Company Logo">
+      <p>Company Name</p>
+      <p>"This is the way we like to Help"</p>
+    </div>
+  </header>
 
-  <!-- Sparkles layer -->
-  <canvas class="sparkle-layer"></canvas>
-
-  <!-- Content -->
-  <div class="container">
-    <img src="logo.png" alt="Company Logo" class="logo">
-    <p class="company-name">Company Name</p>
-    <p class="tagline">"This is the way we like to Help"</p>
-  </div>
-</header>
-
-<main>
-  <p>Here is the rest of your website content...</p>
-</main>
-
-<style>
-.hero-header {
-  position: relative;
-  width: 100%;
-  height: 250px; /* adjust height as you like */
-  overflow: hidden;
-}
-
-.header-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-
-.sparkle-layer {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.container {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  color: white;
-  text-align: center;
-}
-
-.logo {
-  max-height: 80px;
-}
-
-.company-name {
-  font-size: 1.5em;
-  margin: 0;
-}
-
-.tagline {
-  font-style: italic;
-  margin: 0;
-}
-</style>
-
-<script>
-const canvas = document.querySelector('.sparkle-layer');
-const ctx = canvas.getContext('2d');
-let sparkles = [];
-
-function resizeCanvas() {
-  canvas.width = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
-  sparkles = [];
-  for (let i = 0; i < 20; i++) {
-    sparkles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: 2 + Math.random() * 2, // bigger sparkles
-      opacity: Math.random(),
-      speedY: 0.05 + Math.random() * 0.1 // slow movement
-    });
-  }
-}
-
-function drawSparkles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  sparkles.forEach(s => {
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255, 255, 255, ${s.opacity})`;
-    ctx.shadowBlur = 8;
-    ctx.shadowColor = "white";
-    ctx.fill();
-    s.y += s.speedY;
-    if (s.y > canvas.height) s.y = 0;
-  });
-  requestAnimationFrame(drawSparkles);
-}
-
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-drawSparkles();
-</script>
+  <main>
+    <p>Here is the rest of your website content...</p>
+  </main>
 
   
   
