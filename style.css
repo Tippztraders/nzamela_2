@@ -1,45 +1,47 @@
-/* Background fills entire viewport */
-.background {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full screen height */
-    overflow: hidden;
-}
-
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures full coverage */
-}
-
-/* Center hero content */
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
+/* Container: full height hero area, everything centered */
+.text-center.tm-hero-text-container {
+    display: flex;
+    flex-direction: column;       /* stack logo, name, tagline vertically */
+    justify-content: center;      /* vertical center */
+    align-items: center;          /* horizontal center */
+    text-align: center;           /* center the text */
+    min-height: 100vh;             /* full screen height */
+    padding: 20px;
+    background: url("backgroundhero_2.png") no-repeat center center;
+    background-size: cover;
 }
 
 /* Logo styling */
-.logo {
-    max-width: 200px; /* Adjust size if needed */
+.text-center.tm-hero-text-container .logo {
+    max-width: 150px;              /* adjust as needed */
     height: auto;
-    display: block;
-    margin: 0 auto 20px;
+    margin-bottom: 15px;
 }
 
-/* Text styling */
-.company-name {
-    font-size: 2em;
+/* Company name */
+.text-center.tm-hero-text-container .company-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;                   /* adjust color to your background */
+    margin: 0 0 10px;
+}
+
+/* Tagline */
+.text-center.tm-hero-text-container .tagline {
+    font-size: 1.2rem;
+    color: #f0f0f0;
     margin: 0;
 }
 
-.tagline {
-    font-size: 1.2em;
-    margin-top: 10px;
+/* Make it responsive for smaller screens */
+@media (max-width: 600px) {
+    .text-center.tm-hero-text-container .logo {
+        max-width: 100px;
+    }
+    .text-center.tm-hero-text-container .company-name {
+        font-size: 1.8rem;
+    }
+    .text-center.tm-hero-text-container .tagline {
+        font-size: 1rem;
+    }
 }
