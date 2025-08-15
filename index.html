@@ -248,32 +248,38 @@
     
    <!-- HAPPY CLIENT COOL -->
     
-   <section class="happy-section">
+   <!-- After your hero section -->
+<section class="happy-section">
   <div class="happy-image">
-    <img src="happy.jpg" alt="Happy Client">
+    <img src="happy.jpg" alt="Happy client">
   </div>
   <div class="happy-text">
-    <h2>Fast & Easy Cash Loans</h2>
-    <p>Helping you get the funds you need, when you need them — with a smile.</p>
+    <h2>Fast, Friendly Loans</h2>
+    <p>Your happiness is our priority.</p>
   </div>
 </section>
+
     
     
     <!-- JS HAPPY-->
-   <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const happySection = document.querySelector('.happy-section');
-  const observer = new IntersectionObserver(entries => {
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const image = document.querySelector(".happy-image");
+  const text = document.querySelector(".happy-text");
+
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        happySection.classList.add('show');
+        image.classList.add("animate");
+        text.classList.add("animate");
       }
     });
   }, { threshold: 0.3 });
-  
-  observer.observe(happySection);
+
+  observer.observe(document.querySelector(".happy-section"));
 });
 </script>
+
   <!--end of JS HAPPY-->   
     
     
