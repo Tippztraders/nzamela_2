@@ -13,7 +13,7 @@
 
 /* Logo styling */
 .text-center.tm-hero-text-container .logo {
-    max-width: 150px;              /* adjust as needed */
+    max-width: 80px;              /* adjust as needed */
     height: auto;
     margin-bottom: 15px;
 }
