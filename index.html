@@ -3,23 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hero Header Example</title>
+  <title>Zamela Cashloans</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="hero-header">
-    <img src="backgroundhero_2.png" alt="Header Background" class="header-bg">
-    <div class="container">
-      <img src="logo.png" alt="Company Logo">
-      <p>Company Name</p>
-      <p>"This is the way we like to Help"</p>
-    </div>
-  </header>
+<header class="hero-header">
+  <!-- Background image -->
+  <img src="backgroundhero_2.png" alt="Header Background" class="header-bg">
 
-  <main>
-    <p>Here is the rest of your website content...</p>
-  </main>
+  <!-- Content -->
+  <div class="container">
+    <img src="logo.png" alt="Company Logo" class="logo">
+    <p class="company-name">Zamela Cashloans</p>
+    <p class="tagline">Landing you a hand in times of need</p>
+  </div>
+</header>
+
+<main>
+  <p>Here is the rest of your website content...</p>
+</main>
+
+<script>
+  // Create 10 sparkles
+  const header = document.querySelector('.hero-header');
+
+  for(let i=0; i<10; i++){
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.top = Math.random() * 100 + '%';
+    sparkle.style.left = Math.random() * 100 + '%';
+    const size = 2 + Math.random() * 3;
+    sparkle.style.width = sparkle.style.height = size + 'px';
+    sparkle.style.opacity = 0.5 + Math.random() * 0.5;
+    sparkle.style.animationDuration = (30 + Math.random() * 20) + 's';
+    header.appendChild(sparkle);
+  }
+</script>
 
 </body>
 </html>
