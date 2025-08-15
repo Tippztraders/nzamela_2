@@ -43,10 +43,15 @@ body {
   z-index: 0; 
 }
 
+
+
 /* Container for logo/text */
+
 .hero-header .container {
   position: relative;
-  z-index: 2;
+  z-index: 1;     /*  z-index: 2;  */
+  padding: 20px 0; /* give breathing room above/below logo */
+  text-align: center;
 }
 
 .hero-header .container img {
@@ -71,6 +76,14 @@ body {
   animation: sparkleMove 40s linear infinite;
   z-index: 1; /* between background and text */
 }
+
+
+.hero-header img[alt="Company Logo"] {
+  max-width: 150px;
+  height: auto;
+}
+
+
 
 /* Sparkle movement */
 @keyframes sparkleMove {
