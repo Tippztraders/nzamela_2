@@ -9,7 +9,7 @@
 <body>
 
   <header class="hero-header">
-    <img src="backgroundhero_2.png" alt="Header Background" class="header-bg">
+    <img src="backgroundhero_2.jpg" alt="Header Background" class="header-bg">
     <div class="container">
       <img src="logo.png" alt="Company Logo">
       <p>Company Name</p>
@@ -21,5 +21,40 @@
     <p>Here is the rest of your website content...</p>
   </main>
 
+  
+  
+  
+  
+  
+  
+  
+  <!-- 10x SPARKLES -->
+ <script>
+const header = document.querySelector('.hero-header');
+
+// Create 10 sparkles
+for(let i=0; i<10; i++){
+  const sparkle = document.createElement('div');
+  sparkle.className = 'sparkle';
+  sparkle.style.top = Math.random() * 100 + '%';
+  sparkle.style.left = Math.random() * 100 + '%';
+  sparkle.style.width = sparkle.style.height = (2 + Math.random() * 3) + 'px'; // random size
+  sparkle.style.opacity = 0.5 + Math.random() * 0.5; // random opacity
+  sparkle.style.animationDuration = (30 + Math.random() * 20) + 's'; // slow random duration
+  header.appendChild(sparkle);
+}
+</script>
+ 
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+  
+  
 </body>
 </html>
