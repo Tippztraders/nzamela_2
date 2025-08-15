@@ -12,9 +12,20 @@ body {
 .container img {
   width: 120px; /* small image */
   height: auto;
+  margin-bottom: 15px; /* gap below image */
 }
 
+/* Responsive text */
 .container p {
   margin: 5px 0;
+  font-size: 1.2rem; /* default size */
 }
 
+@media (max-width: 480px) {
+  .container img {
+    width: 90px; /* smaller image on phones */
+  }
+  .container p {
+    font-size: 1rem; /* smaller text on phones */
+  }
+}
