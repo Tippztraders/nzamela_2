@@ -623,6 +623,7 @@ footer::before {
 
 /* HAPPY CLIENT COOL */
 .happy-section {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -631,19 +632,32 @@ footer::before {
   margin: 50px auto;
 }
 
-.happy-image,
-.happy-text {
-  flex: 1;
-  opacity: 0; /* Start hidden */
+/* IMAGE */
+.happy-image {
+  position: relative;
+  z-index: 1; /* behind text later */
+  opacity: 0;
+  transform: translateX(-120%);
 }
-
 .happy-image img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Slide-in animations */
+/* TEXT */
+.happy-text {
+  position: absolute;
+  z-index: 2; /* in front of image */
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px 30px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateX(120%);
+  text-align: center;
+}
+
+/* ANIMATION TRIGGERS */
 .happy-image.animate {
   animation: slideInLeft 1s forwards;
 }
@@ -653,13 +667,13 @@ footer::before {
 }
 
 @keyframes slideInLeft {
-  from { transform: translateX(-100%); opacity: 0; }
-  to   { transform: translateX(0); opacity: 1; }
+  from { transform: translateX(-120%); opacity: 0; }
+  to   { transform: translateX(-15%); opacity: 1; }
 }
 
 @keyframes slideInRight {
-  from { transform: translateX(100%); opacity: 0; }
-  to   { transform: translateX(0); opacity: 1; }
+  from { transform: translateX(120%); opacity: 0; }
+  to   { transform: translateX(15%); opacity: 1; }
 }
 
 
