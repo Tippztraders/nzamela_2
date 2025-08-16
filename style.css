@@ -130,8 +130,8 @@ main {
 
 
 
-/* ==========================
-   FAST SECTION
+/* =====================================
+   FAST SECTION is for the Orange Button
 ========================== */
 .fast {
   background: linear-gradient(135deg, #4a90e2 0%, #71b7f0 100%);
@@ -140,6 +140,7 @@ main {
   border-radius: 8px;
   margin: 1em auto;
   max-width: 800px;
+  text-align: center;
 }
 
 .fast .subtitle {
@@ -151,15 +152,16 @@ main {
 
 .fast .btn {
   display: inline-block;
-  background: #ffb400;
+  background: linear-gradient(to bottom, #ffb400, #FF9800); 
   color: #000;
   padding: 0.8em 1.8em;
   text-decoration: none;
   border-radius: 25px;
   font-weight: 700;
-  box-shadow: 0 4px 10px rgba(255, 148, 0, 0.4);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);  /*  box-shadow: 0 4px 10px rgba(255, 148, 0, 0.4); */
   transition: all 0.3s ease;
 }
+
 
 .fast .btn:hover {
   background: #ff9100;
@@ -167,8 +169,18 @@ main {
 }
 
 
+
+
+ /* end of FAST SECTION is for the Orange Button */
+
+
+
+
+
+
+
 /* ==========================
-   FULL-WIDTH BLOCKS
+   FULL-WIDTH BLOCKS ???? What is this for??
 ========================== */
 .full-block {
   width: 100%;
@@ -221,29 +233,45 @@ main {
 
      
 /* DOCUMENTS REQUIRED */
+/* Documents Required Section */
 .docs-title {
-  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 1em;
-  color: #333;
+  font-weight: bold;
+  color: #111; /* darker black */
   text-align: center;
+  margin-bottom: 20px;
+  text-decoration: underline; /* optional, matches section style */
 }
 
-/* Document list - applies to all list items at once */
+/* List styling */
 .docs-list {
   list-style: none; /* remove default bullets */
   padding: 0;
-  margin: 0 auto;
-  max-width: 400px;
-  text-align: left;
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 1.2rem;
+  max-width: 400px; /* optional, keeps it tidy */
+  margin: 0 auto; /* center the list */
 }
 
 .docs-list li {
-  margin: 0.6em 0;
+  font-family: 'Arial', sans-serif; /* you can change to theme font */
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
 }
+
+/* Icon spacing */
+.docs-list li::before {
+  content: '';
+  display: inline-block;
+  width: 1.5em; /* reserve space for emoji icon */
+}
+
+/* Optional: make emoji icons stand out */
+.docs-list li span {
+  margin-right: 10px;
+}
+
 
 
 
@@ -262,73 +290,81 @@ main {
 /* ==========================
    HOW IT WORKS
 ========================== */
+/* New How It Works Section */
 .how-it-works {
-  background: linear-gradient(135deg, #40E0D0, #1E90FF); 
-  width: 100%;
-  padding: 1em 0.5em;  /* 4em 1em; */
-  color: #fff;
+  background: #fff;
+  color: #111;
+  padding: 3em 1em;
   font-family: "Segoe UI", Arial, sans-serif;
+  text-align: center;
   position: relative;
-  text-align: center; /* ensure all inner content is centered */
 }
 
-/* Center container */
 .how-it-works-container {
   max-width: 800px;
   margin: 0 auto;
-  animation: slideIn 1.2s ease-out forwards;
 }
 
-/* Heading styling */
 .how-it-works .docs-title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 1.5em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2em;
 }
 
 /* List styling */
 .how-it-works .docs-list {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
-  display: inline-block; /* centers the UL itself */
-  text-align: left; /* keep text inside boxes left-aligned */
-  font-size: 1.4rem; /* slightly bigger text */
-  line-height: 1.6;
+  margin: 0;
 }
 
 .how-it-works .docs-list li {
-  margin-bottom: 1em;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 1em 1.2em; /* more padding */
-  border-radius: 8px;
-  backdrop-filter: blur(5px);
-  transform: translateX(-50px);
-  opacity: 0;
-  animation: fadeSlide 0.8s ease forwards;
-  /* subtle black stroke on text */
-  -webkit-text-stroke: 0.3px black;
-  text-shadow: 0.5px 0.5px 0 rgba(0,0,0,0.3);
+  position: relative;
+  margin-bottom: 2em;
+  padding-left: 70px; /* space for number circle */
+  font-size: 1.2rem;
+  opacity: 0; /* start hidden */
+  transition: opacity 0.8s ease, color 0.5s ease;
 }
 
-/* Animation delays */
-.how-it-works .docs-list li:nth-child(1) { animation-delay: 0.3s; }
-.how-it-works .docs-list li:nth-child(2) { animation-delay: 0.6s; }
-.how-it-works .docs-list li:nth-child(3) { animation-delay: 0.9s; }
-.how-it-works .docs-list li:nth-child(4) { animation-delay: 1.2s; }
-
-/* Keyframes */
-@keyframes slideIn {
-  from { transform: translateX(-100px); opacity: 0; }
-  to   { transform: translateX(0); opacity: 1; }
+/* Number circle */
+.how-it-works .docs-list li::before {
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #1E90FF; /* blue ring */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #1E90FF;
+  background: rgba(30,144,255,0.1); /* faint fill */
+  transition: all 0.5s ease;
 }
 
-@keyframes fadeSlide {
-  to { transform: translateX(0); opacity: 1; }
+/* On scroll solid effect */
+.how-it-works .docs-list li.visible::before {
+  background: #1E90FF; /* solid ring */
+  color: #fff; /* number turns white */
 }
+
+.how-it-works .docs-list li.visible {
+  opacity: 1;
+}
+
+/* Reset counter */
+.docs-list {
+  counter-reset: li;
+}
+
+/* end of How It Works */
+
 
 
 
