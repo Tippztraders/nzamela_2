@@ -218,6 +218,8 @@ main {
 
 
 
+
+     
 /* DOCUMENTS REQUIRED */
 .docs-title {
   font-family: "Segoe UI", Arial, sans-serif;
@@ -260,16 +262,14 @@ main {
 /* ==========================
    HOW IT WORKS
 ========================== */
-/* Full-width section with nice background */
 .how-it-works {
   background: linear-gradient(135deg, #40E0D0, #1E90FF); 
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  padding: 4em 1em;
+  width: 100%;
+  padding: 1em 0.5em;  /* 4em 1em; */
   color: #fff;
   font-family: "Segoe UI", Arial, sans-serif;
   position: relative;
-  overflow: hidden;
+  text-align: center; /* ensure all inner content is centered */
 }
 
 /* Center container */
@@ -293,22 +293,28 @@ main {
 .how-it-works .docs-list {
   list-style: none;
   padding: 0;
-  margin: 0;
-  font-size: 1.2rem;
+  margin: 0 auto;
+  display: inline-block; /* centers the UL itself */
+  text-align: left; /* keep text inside boxes left-aligned */
+  font-size: 1.4rem; /* slightly bigger text */
   line-height: 1.6;
 }
 
 .how-it-works .docs-list li {
   margin-bottom: 1em;
   background: rgba(255, 255, 255, 0.15);
-  padding: 0.8em 1em;
+  padding: 1em 1.2em; /* more padding */
   border-radius: 8px;
   backdrop-filter: blur(5px);
   transform: translateX(-50px);
   opacity: 0;
   animation: fadeSlide 0.8s ease forwards;
+  /* subtle black stroke on text */
+  -webkit-text-stroke: 0.3px black;
+  text-shadow: 0.5px 0.5px 0 rgba(0,0,0,0.3);
 }
 
+/* Animation delays */
 .how-it-works .docs-list li:nth-child(1) { animation-delay: 0.3s; }
 .how-it-works .docs-list li:nth-child(2) { animation-delay: 0.6s; }
 .how-it-works .docs-list li:nth-child(3) { animation-delay: 0.9s; }
@@ -323,6 +329,16 @@ main {
 @keyframes fadeSlide {
   to { transform: translateX(0); opacity: 1; }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -598,58 +614,53 @@ footer::before {
 
 /* HAPPY CLIENT COOL */
 .happy-section {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 50px 20px;
+  background: white;
   overflow: hidden;
-  max-width: 960px;
-  margin: 50px auto;
 }
 
-/* IMAGE */
+.happy-image, .happy-text {
+  flex: 1;
+  opacity: 0; /* start hidden */
+  transform: translateX(0);
+  transition: all 0.8s ease;
+}
+
+/* Start positions for animation */
 .happy-image {
-  position: relative;
-  z-index: 1; /* behind text later */
-  opacity: 0;
-  transform: translateX(-120%);
-}
-.happy-image img {
-  width: 100%;
-  height: auto;
-  display: block;
+  transform: translateX(-100%);
 }
 
-/* TEXT */
 .happy-text {
-  position: absolute;
-  z-index: 2; /* in front of image */
-  background: rgba(255, 255, 255, 0.85);
-  padding: 20px 30px;
-  border-radius: 10px;
-  opacity: 0;
-  transform: translateX(120%);
-  text-align: center;
+  transform: translateX(100%);
+  text-align: left;
+  padding: 20px;
 }
 
-/* ANIMATION TRIGGERS */
-.happy-image.animate {
-  animation: slideInLeft 1s forwards;
+/* Animate in when visible */
+.happy-section.show .happy-image {
+  transform: translateX(0);
+  opacity: 1;
 }
 
-.happy-text.animate {
-  animation: slideInRight 1s forwards;
+.happy-section.show .happy-text {
+  transform: translateX(0);
+  opacity: 1;
 }
 
-@keyframes slideInLeft {
-  from { transform: translateX(-120%); opacity: 0; }
-  to   { transform: translateX(-15%); opacity: 1; }
+/* Responsive layout */
+@media (max-width: 768px) {
+  .happy-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .happy-image, .happy-text {
+    transform: translateX(0); /* no slide on small screens */
+    opacity: 1;
+  }
 }
-
-@keyframes slideInRight {
-  from { transform: translateX(120%); opacity: 0; }
-  to   { transform: translateX(15%); opacity: 1; }
-}
-
 
 /* end of HAPPY CLIENT COOL */
