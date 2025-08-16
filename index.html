@@ -171,10 +171,10 @@
     
     
   <!-- LOAN CALCULATOR -->
-  <section class="loan-calculator">
+ <section class="loan-calculator">
   <h3>Loan Calculator</h3>
   
-  <label for="amount">Loan Amount (ZAR):</label>
+  <label for="amount">Loan Amount (N$):</label>
   <input type="number" id="amount" min="500" value="500" placeholder="Enter amount">
   <small>Minimum amount to borrow is 500</small>
 
@@ -184,6 +184,11 @@
   <button onclick="calculateLoan()">Calculate</button>
   <p id="result"></p>
 </section>
+    
+
+   <!-- end of LOAN CALCULATOR -->
+    
+    
     
     
     
@@ -230,7 +235,7 @@
       let monthly = total / months;
 
       document.getElementById('result').innerText =
-        `Total Repayment: ZAR ${total.toFixed(2)} | Monthly Payment: ZAR ${monthly.toFixed(2)}`;
+        `Total Repayment: N$ ${total.toFixed(2)} | Monthly Payment: N$ ${monthly.toFixed(2)}`;
     }
   </script>  
   
@@ -260,7 +265,7 @@
 
     
     
-    <br><br>
+    
     
     
     
@@ -270,35 +275,10 @@
     
    <!-- HAPPY CLIENT COOL -->
     
-   <!-- After your hero section -->
-<section class="happy-section">
-  <div class="happy-image">
-    <img src="happy.jpg" alt="Happy Client">
-  </div>
-  <div class="happy-text">
-    <h2>Fast & Easy Cash Loans</h2>
-    <p>Helping you get the funds you need, when you need them — with a smile.</p>
-  </div>
-</section>
-
-    
+   
     
     <!-- JS HAPPY-->
-  <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const happySection = document.querySelector('.happy-section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        happySection.classList.add('show');
-      }
-    });
-  }, { threshold: 0.3 });
-  
-  observer.observe(happySection);
-});
-</script>
-
+ 
 
   <!--end of JS HAPPY-->   
     
