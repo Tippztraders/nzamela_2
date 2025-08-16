@@ -323,7 +323,7 @@ main {
   margin-bottom: 2em;
   padding-left: 70px; /* space for number circle */
   font-size: 1.2rem;
-  opacity: 0; /* start hidden */
+  opacity: 1; /* start hidden */
   transition: opacity 0.8s ease, color 0.5s ease;
 }
 
@@ -394,19 +394,21 @@ main {
 ========================== */
 /* WHY CHOOSE US */
 
-background: #fff;        /* white background */
-  width: 100vw;            /* 100% of viewport width */
+.why-choose-us {
+  background: #fff;
+  width: 100vw;
   padding: 4em 1em;
   box-sizing: border-box;
   text-align: center;
-  margin-left: calc(-50vw + 50%); /* center it even if inside a constrained container */
+  margin-left: calc(-50vw + 50%);
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-.why-choose-us.full-block h3 {
-  font-size: 2.4rem;
+.why-choose-us h3 {
+  font-size: 2rem;
+  font-weight: 750;
   margin-bottom: 2em;
-  font-weight: 700;
-  color: #004aad;
+  color: black;  
 }
 
 .why-cards {
@@ -633,6 +635,11 @@ background: #fff;        /* white background */
 
 
 
+
+
+
+
+
 /* ==========================
    FOOTER
 ========================== */
@@ -661,7 +668,7 @@ footer::before {
   pointer-events: none;
 }
 
-
+/*  end of FOOTER  */
 
 
 
