@@ -225,7 +225,15 @@ main {
 
 
 
-
+/* Line after payloans */
+hr {
+  width: 60%;                     /* shorten the line */
+  margin: 30px auto;              /* center it with spacing */
+  border: none;                   /* remove default style */
+  border-top: 2px solid rgba(255,255,255,0.8); /* soft white line */
+  border-radius: 2px;             /* slightly rounded ends */
+  box-shadow: 0 0 8px rgba(255,255,255,0.5);   /* glowing effect */
+}
 
 
 
